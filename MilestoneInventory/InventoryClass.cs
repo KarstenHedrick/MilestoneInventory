@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Name: Karsten Hedrick
+ * Professor: William Hughes
+ * Class: CST-150
+ * Date: 2/26/2022
+ * This is my own work.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,24 +36,6 @@ namespace MilestoneInventory
             ProductCondition = String.Empty;
             ProductBrand = String.Empty;
             ProductID = 0;
-        }
-
-        /// <summary>
-        /// Parametized Product Constructor. Creates new Products
-        /// </summary>
-        /// <param name="inventoryProduct"></param>
-        /// <param name="productQuantity"></param>
-        /// <param name="productCost"></param>
-        /// <param name="productCondition"></param>
-        /// <param name="productBrand"></param>
-        public void Product(string inventoryProduct, int productQuantity, double productCost, string productCondition, string productBrand, int productID)
-        {
-            InventoryProduct = inventoryProduct;
-            ProductQuantity = productQuantity;
-            ProductCost = productCost;
-            ProductCondition = productCondition;
-            ProductBrand = productBrand;
-            ProductID = productID;
         }
 
 

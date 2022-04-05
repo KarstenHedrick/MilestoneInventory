@@ -34,9 +34,10 @@
             this.btnSearchItems = new System.Windows.Forms.Button();
             this.btnAddItems = new System.Windows.Forms.Button();
             this.btnRemoveItems = new System.Windows.Forms.Button();
-            this.btnReorderItems = new System.Windows.Forms.Button();
             this.btnItemDetails = new System.Windows.Forms.Button();
-            this.lstInventory = new System.Windows.Forms.CheckedListBox();
+            this.gvInventory = new System.Windows.Forms.DataGridView();
+            this.btnRestock = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.gvInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHomepage
@@ -44,7 +45,7 @@
             this.btnHomepage.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnHomepage.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHomepage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnHomepage.Location = new System.Drawing.Point(39, 54);
+            this.btnHomepage.Location = new System.Drawing.Point(31, 32);
             this.btnHomepage.Name = "btnHomepage";
             this.btnHomepage.Size = new System.Drawing.Size(379, 81);
             this.btnHomepage.TabIndex = 2;
@@ -56,9 +57,9 @@
             // 
             this.btnEditItems.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnEditItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditItems.Location = new System.Drawing.Point(797, 54);
+            this.btnEditItems.Location = new System.Drawing.Point(1185, 524);
             this.btnEditItems.Name = "btnEditItems";
-            this.btnEditItems.Size = new System.Drawing.Size(215, 57);
+            this.btnEditItems.Size = new System.Drawing.Size(241, 81);
             this.btnEditItems.TabIndex = 4;
             this.btnEditItems.Text = "Edit Items";
             this.btnEditItems.UseVisualStyleBackColor = false;
@@ -67,10 +68,10 @@
             // txtInventoryTitle
             // 
             this.txtInventoryTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInventoryTitle.Location = new System.Drawing.Point(469, 54);
+            this.txtInventoryTitle.Location = new System.Drawing.Point(487, 60);
             this.txtInventoryTitle.Multiline = true;
             this.txtInventoryTitle.Name = "txtInventoryTitle";
-            this.txtInventoryTitle.Size = new System.Drawing.Size(302, 57);
+            this.txtInventoryTitle.Size = new System.Drawing.Size(316, 53);
             this.txtInventoryTitle.TabIndex = 5;
             this.txtInventoryTitle.Text = "Inventory";
             this.txtInventoryTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -79,9 +80,9 @@
             // 
             this.btnSearchItems.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnSearchItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchItems.Location = new System.Drawing.Point(797, 129);
+            this.btnSearchItems.Location = new System.Drawing.Point(1185, 129);
             this.btnSearchItems.Name = "btnSearchItems";
-            this.btnSearchItems.Size = new System.Drawing.Size(215, 57);
+            this.btnSearchItems.Size = new System.Drawing.Size(241, 81);
             this.btnSearchItems.TabIndex = 6;
             this.btnSearchItems.Text = "Search Items";
             this.btnSearchItems.UseVisualStyleBackColor = false;
@@ -91,9 +92,9 @@
             // 
             this.btnAddItems.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnAddItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddItems.Location = new System.Drawing.Point(797, 204);
+            this.btnAddItems.Location = new System.Drawing.Point(1185, 230);
             this.btnAddItems.Name = "btnAddItems";
-            this.btnAddItems.Size = new System.Drawing.Size(215, 57);
+            this.btnAddItems.Size = new System.Drawing.Size(241, 81);
             this.btnAddItems.TabIndex = 7;
             this.btnAddItems.Text = "Add Items";
             this.btnAddItems.UseVisualStyleBackColor = false;
@@ -103,55 +104,57 @@
             // 
             this.btnRemoveItems.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnRemoveItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveItems.Location = new System.Drawing.Point(797, 278);
+            this.btnRemoveItems.Location = new System.Drawing.Point(1185, 329);
             this.btnRemoveItems.Name = "btnRemoveItems";
-            this.btnRemoveItems.Size = new System.Drawing.Size(215, 57);
+            this.btnRemoveItems.Size = new System.Drawing.Size(241, 81);
             this.btnRemoveItems.TabIndex = 8;
             this.btnRemoveItems.Text = "Remove Items";
             this.btnRemoveItems.UseVisualStyleBackColor = false;
             this.btnRemoveItems.Click += new System.EventHandler(this.InvToRmvButtonClickEvent);
             // 
-            // btnReorderItems
-            // 
-            this.btnReorderItems.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnReorderItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReorderItems.Location = new System.Drawing.Point(797, 353);
-            this.btnReorderItems.Name = "btnReorderItems";
-            this.btnReorderItems.Size = new System.Drawing.Size(215, 57);
-            this.btnReorderItems.TabIndex = 9;
-            this.btnReorderItems.Text = "Reorder Items";
-            this.btnReorderItems.UseVisualStyleBackColor = false;
-            // 
             // btnItemDetails
             // 
             this.btnItemDetails.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnItemDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItemDetails.Location = new System.Drawing.Point(797, 430);
+            this.btnItemDetails.Location = new System.Drawing.Point(1185, 623);
             this.btnItemDetails.Name = "btnItemDetails";
-            this.btnItemDetails.Size = new System.Drawing.Size(215, 57);
+            this.btnItemDetails.Size = new System.Drawing.Size(241, 81);
             this.btnItemDetails.TabIndex = 10;
             this.btnItemDetails.Text = "Item Details";
             this.btnItemDetails.UseVisualStyleBackColor = false;
             this.btnItemDetails.Click += new System.EventHandler(this.InvToDetailsButtonClickEvent);
             // 
-            // lstInventory
+            // gvInventory
             // 
-            this.lstInventory.FormattingEnabled = true;
-            this.lstInventory.Location = new System.Drawing.Point(469, 129);
-            this.lstInventory.Name = "lstInventory";
-            this.lstInventory.Size = new System.Drawing.Size(302, 368);
-            this.lstInventory.TabIndex = 11;
-            this.lstInventory.SelectedIndexChanged += new System.EventHandler(this.ItemSelectCheckedEvent);
+            this.gvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvInventory.Location = new System.Drawing.Point(31, 129);
+            this.gvInventory.Name = "gvInventory";
+            this.gvInventory.RowHeadersWidth = 82;
+            this.gvInventory.RowTemplate.Height = 33;
+            this.gvInventory.Size = new System.Drawing.Size(1110, 575);
+            this.gvInventory.TabIndex = 11;
+            // 
+            // btnRestock
+            // 
+            this.btnRestock.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnRestock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestock.Location = new System.Drawing.Point(1185, 428);
+            this.btnRestock.Name = "btnRestock";
+            this.btnRestock.Size = new System.Drawing.Size(241, 81);
+            this.btnRestock.TabIndex = 12;
+            this.btnRestock.Text = "Re-Stock";
+            this.btnRestock.UseVisualStyleBackColor = false;
+            this.btnRestock.Click += new System.EventHandler(this.BtnRestockClickEvent);
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1044, 536);
-            this.Controls.Add(this.lstInventory);
+            this.ClientSize = new System.Drawing.Size(1460, 824);
+            this.Controls.Add(this.btnRestock);
+            this.Controls.Add(this.gvInventory);
             this.Controls.Add(this.btnItemDetails);
-            this.Controls.Add(this.btnReorderItems);
             this.Controls.Add(this.btnRemoveItems);
             this.Controls.Add(this.btnAddItems);
             this.Controls.Add(this.btnSearchItems);
@@ -160,6 +163,7 @@
             this.Controls.Add(this.btnHomepage);
             this.Name = "Inventory";
             this.Text = "Inventory";
+            ((System.ComponentModel.ISupportInitialize)(this.gvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,8 +177,8 @@
         private System.Windows.Forms.Button btnSearchItems;
         private System.Windows.Forms.Button btnAddItems;
         private System.Windows.Forms.Button btnRemoveItems;
-        private System.Windows.Forms.Button btnReorderItems;
         private System.Windows.Forms.Button btnItemDetails;
-        private System.Windows.Forms.CheckedListBox lstInventory;
+        private System.Windows.Forms.DataGridView gvInventory;
+        private System.Windows.Forms.Button btnRestock;
     }
 }

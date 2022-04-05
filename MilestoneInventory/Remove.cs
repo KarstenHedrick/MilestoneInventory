@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Name: Karsten Hedrick
+ * Class: CST-150
+ * File: Remove Class
+ * Date: 4/2/2022
+ * This is my own work.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +24,28 @@ namespace MilestoneInventory
             InitializeComponent();
         }
 
+        internal void TakeThis(Vans[] vansInvArr)
+        {
+            gvRemoveItems.DataSource = vansInvArr;
+        }
+
+        /// <summary>
+        /// Remove Button Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnRemoveClickEvent(object sender, EventArgs e)
+        {
+            int rowIndex = gvRemoveItems.CurrentCell.RowIndex;
+
+            Inventory inv = new Inventory();
+
+            inv.RemoveItemToArray(rowIndex);
+
+            inv.Show();
+            this.Hide();
+        }
+
         //--------------------------------------------------------------
         // Buttons
         //--------------------------------------------------------------
@@ -28,5 +57,6 @@ namespace MilestoneInventory
             home.Show();
             this.Hide();
         }
+
     }
 }

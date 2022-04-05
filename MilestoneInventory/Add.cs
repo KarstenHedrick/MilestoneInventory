@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Name: Karsten Hedrick
+ * Class: CST-150
+ * File: Add Class
+ * Date: 2/26/2022
+ * This is my own work.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +19,8 @@ namespace MilestoneInventory
 {
     public partial class Add : Form
     {
-        Shoes shoes = new Shoes();
         public int ProductQuantity { get ; set; }
+
         public Add()
         {
             InitializeComponent();
@@ -37,11 +44,13 @@ namespace MilestoneInventory
         {
             // Declare Variables
             string inventoryProduct = txtAddName.Text;
-            string inventoryWear = lstAddWear.Text;
+            string inventoryWear = lstAddWear.GetItemText(lstAddWear.SelectedItem);
             string inventoryBrand = txtAddBrand.Text;
-            int inventoryQuantity;
-            double inventoryCost;
-            int productID;
+            string fit = txtField2.Text;
+            bool isAvailable = false;
+            int inventoryQuantity = 0;
+            double inventoryCost = 0.00;
+            int productID = 0;
 
             // Flag statement
             bool isSuccessful = true;
@@ -52,6 +61,7 @@ namespace MilestoneInventory
                 inventoryQuantity = Convert.ToInt32(txtAddQuantity.Text);
                 inventoryCost = Convert.ToDouble(txtAddCost.Text);
                 productID = Convert.ToInt32(txtAddID.Text);
+                isAvailable = Convert.ToBoolean(txtField1.Text);
             }
             catch (Exception)
             {
@@ -61,30 +71,21 @@ namespace MilestoneInventory
 
             if (isSuccessful)
             {
-                inventoryQuantity = Convert.ToInt32(txtAddQuantity.Text);
-                inventoryCost = Convert.ToDouble(txtAddCost.Text);
-                productID = Convert.ToInt32(txtAddID.Text);
 
                 ProductQuantity = inventoryQuantity;
                 lblError.Visible = false;
 
-                InventoryClass product = new InventoryClass();
-                Shoes s = new Shoes();
-                product.Product(inventoryProduct, inventoryQuantity, inventoryCost, inventoryWear, inventoryBrand, productID);
-
-                //s.ToString(inventoryProduct, inventoryQuantity, inventoryCost, inventoryWear, inventoryBrand, productID);
-
-               // s.ShoesList.Add(inventoryProduct);
-
-                
-
                 // Add to inventory page
                 Inventory inventory = new Inventory();
-                inventory.AddListedItem(inventoryProduct);
+
+                inventory.AddItemToArray(inventoryProduct, inventoryWear, inventoryBrand, fit, isAvailable,
+                inventoryQuantity, inventoryCost, productID);
 
                 inventory.Show();
                 this.Hide();
             }
+
+
         }
     }
 }

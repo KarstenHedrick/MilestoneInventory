@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Name: Karsten Hedrick
+ * Class: CST-150
+ * Date: 4/2/2022
+ * File: Homepage
+ * This is my own work.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

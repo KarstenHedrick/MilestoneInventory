@@ -42,9 +42,12 @@
             this.txtAddName = new System.Windows.Forms.TextBox();
             this.lblAddName = new System.Windows.Forms.Label();
             this.txtInventoryTitle = new System.Windows.Forms.TextBox();
-            this.lstInventory = new System.Windows.Forms.ListBox();
             this.btnHomepage = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.txtField2 = new System.Windows.Forms.TextBox();
+            this.lblField2 = new System.Windows.Forms.Label();
+            this.txtField1 = new System.Windows.Forms.TextBox();
+            this.lblField1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddItem
@@ -75,7 +78,7 @@
             // 
             // txtAddBrand
             // 
-            this.txtAddBrand.Location = new System.Drawing.Point(267, 430);
+            this.txtAddBrand.Location = new System.Drawing.Point(454, 430);
             this.txtAddBrand.Multiline = true;
             this.txtAddBrand.Name = "txtAddBrand";
             this.txtAddBrand.Size = new System.Drawing.Size(164, 42);
@@ -85,7 +88,7 @@
             // 
             this.lblAddBrand.AutoSize = true;
             this.lblAddBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBrand.Location = new System.Drawing.Point(261, 386);
+            this.lblAddBrand.Location = new System.Drawing.Point(448, 386);
             this.lblAddBrand.Name = "lblAddBrand";
             this.lblAddBrand.Size = new System.Drawing.Size(86, 31);
             this.lblAddBrand.TabIndex = 48;
@@ -103,7 +106,7 @@
             // 
             // txtAddID
             // 
-            this.txtAddID.Location = new System.Drawing.Point(267, 312);
+            this.txtAddID.Location = new System.Drawing.Point(454, 312);
             this.txtAddID.Multiline = true;
             this.txtAddID.Name = "txtAddID";
             this.txtAddID.Size = new System.Drawing.Size(164, 42);
@@ -113,7 +116,7 @@
             // 
             this.lblAddID.AutoSize = true;
             this.lblAddID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddID.Location = new System.Drawing.Point(261, 264);
+            this.lblAddID.Location = new System.Drawing.Point(448, 264);
             this.lblAddID.Name = "lblAddID";
             this.lblAddID.Size = new System.Drawing.Size(42, 31);
             this.lblAddID.TabIndex = 45;
@@ -141,7 +144,7 @@
             // 
             this.lblAddQuantity.AutoSize = true;
             this.lblAddQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddQuantity.Location = new System.Drawing.Point(261, 151);
+            this.lblAddQuantity.Location = new System.Drawing.Point(448, 151);
             this.lblAddQuantity.Name = "lblAddQuantity";
             this.lblAddQuantity.Size = new System.Drawing.Size(57, 31);
             this.lblAddQuantity.TabIndex = 42;
@@ -149,7 +152,7 @@
             // 
             // txtAddQuantity
             // 
-            this.txtAddQuantity.Location = new System.Drawing.Point(267, 196);
+            this.txtAddQuantity.Location = new System.Drawing.Point(454, 196);
             this.txtAddQuantity.Multiline = true;
             this.txtAddQuantity.Name = "txtAddQuantity";
             this.txtAddQuantity.Size = new System.Drawing.Size(164, 42);
@@ -184,15 +187,6 @@
             this.txtInventoryTitle.Text = "Inventory";
             this.txtInventoryTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lstInventory
-            // 
-            this.lstInventory.FormattingEnabled = true;
-            this.lstInventory.ItemHeight = 25;
-            this.lstInventory.Location = new System.Drawing.Point(454, 115);
-            this.lstInventory.Name = "lstInventory";
-            this.lstInventory.Size = new System.Drawing.Size(302, 379);
-            this.lstInventory.TabIndex = 37;
-            // 
             // btnHomepage
             // 
             this.btnHomepage.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -210,18 +204,58 @@
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(787, 115);
+            this.lblError.Location = new System.Drawing.Point(787, 196);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(243, 25);
             this.lblError.TabIndex = 52;
             this.lblError.Text = "Error: Enter valid inputs.";
+            // 
+            // txtField2
+            // 
+            this.txtField2.Location = new System.Drawing.Point(792, 430);
+            this.txtField2.Multiline = true;
+            this.txtField2.Name = "txtField2";
+            this.txtField2.Size = new System.Drawing.Size(164, 42);
+            this.txtField2.TabIndex = 58;
+            // 
+            // lblField2
+            // 
+            this.lblField2.AutoSize = true;
+            this.lblField2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblField2.Location = new System.Drawing.Point(786, 264);
+            this.lblField2.Name = "lblField2";
+            this.lblField2.Size = new System.Drawing.Size(277, 31);
+            this.lblField2.TabIndex = 57;
+            this.lblField2.Text = "Is Available (Boolean)";
+            // 
+            // txtField1
+            // 
+            this.txtField1.Location = new System.Drawing.Point(792, 312);
+            this.txtField1.Multiline = true;
+            this.txtField1.Name = "txtField1";
+            this.txtField1.Size = new System.Drawing.Size(164, 42);
+            this.txtField1.TabIndex = 56;
+            // 
+            // lblField1
+            // 
+            this.lblField1.AutoSize = true;
+            this.lblField1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblField1.Location = new System.Drawing.Point(800, 386);
+            this.lblField1.Name = "lblField1";
+            this.lblField1.Size = new System.Drawing.Size(45, 31);
+            this.lblField1.TabIndex = 55;
+            this.lblField1.Text = "Fit";
             // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1044, 536);
+            this.ClientSize = new System.Drawing.Size(1074, 536);
+            this.Controls.Add(this.txtField2);
+            this.Controls.Add(this.lblField2);
+            this.Controls.Add(this.txtField1);
+            this.Controls.Add(this.lblField1);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.lstAddWear);
@@ -237,7 +271,6 @@
             this.Controls.Add(this.txtAddName);
             this.Controls.Add(this.lblAddName);
             this.Controls.Add(this.txtInventoryTitle);
-            this.Controls.Add(this.lstInventory);
             this.Controls.Add(this.btnHomepage);
             this.Name = "Add";
             this.Text = "Add";
@@ -262,8 +295,11 @@
         private System.Windows.Forms.TextBox txtAddName;
         private System.Windows.Forms.Label lblAddName;
         private System.Windows.Forms.TextBox txtInventoryTitle;
-        private System.Windows.Forms.ListBox lstInventory;
         private System.Windows.Forms.Button btnHomepage;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.TextBox txtField2;
+        private System.Windows.Forms.Label lblField2;
+        private System.Windows.Forms.TextBox txtField1;
+        private System.Windows.Forms.Label lblField1;
     }
 }

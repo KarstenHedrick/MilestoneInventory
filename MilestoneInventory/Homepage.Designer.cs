@@ -53,7 +53,7 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button2.Location = new System.Drawing.Point(53, 54);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(379, 81);
+            this.button2.Size = new System.Drawing.Size(405, 81);
             this.button2.TabIndex = 1;
             this.button2.Text = "Karsten\'s Kicks";
             this.button2.UseVisualStyleBackColor = false;
